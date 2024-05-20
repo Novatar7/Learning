@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         MessagesComponent,
-        HeroesComponent
+        HeroesComponent,
+        DashboardComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
