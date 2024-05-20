@@ -25,4 +25,5 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         HeroDetailComponent
     ]
 })
+
 export class AppModule { }
