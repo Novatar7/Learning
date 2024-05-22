@@ -14,7 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         AppComponent,
         MessagesComponent,
         HeroesComponent,
-        DashboardComponent
+        DashboardComponent,
+      HeroDetailComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -22,7 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        HeroDetailComponent
+
     ]
 })
 
