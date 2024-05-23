@@ -1,0 +1,7 @@
+.slot-machine {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+  transition: transform 2s ease-in-out;
+}
