@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,11 +7,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Winner-announcement';
+  file: File | null = null;
+  winner: any = null;
 
-  winnerData: any;
+  constructor(private http: HttpClient) {}
 
-  onWinnerSelected(winnerData: any): void {
-    this.winnerData = winnerData;
+  onFileChange(event: any) {
+    this.file = event.target.files[0];
   }
+
+  uploadFile() {
+    if (this.file) {
+      const formData = new FormData();
+      formData.append('file', this.file);
+
+      this.http.post('http://localhost:8080/api/upload', formData)
+        .subscribe(response => {
+          console.log('File uploaded successfully', response);
+        }, error => {
+          console.error('Failed to upload file', error);
+        });
+    }
+  }
+
+  getWinner() {
+    this.http.get('http://localhost:8080/api/winner')
+      .subscribe(response => {
+        this.winner = response;
+      }, error => {
+        console.error('Failed to get winner', error);
+      });
+  }
+
 }

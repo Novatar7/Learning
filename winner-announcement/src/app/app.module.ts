@@ -1,20 +1,19 @@
-import { NgModule } from '@angular/core';
+// app.module.ts
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FileUploadComponent } from './file-upload/file-upload.component';
-import { SlotMachineComponent } from './slot-machine/slot-machine.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FileUploadComponent,
-    SlotMachineComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

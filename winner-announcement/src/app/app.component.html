@@ -1,3 +1,12 @@
-<h1>{{title}}</h1>
-<app-file-upload (winnerSelected)="onWinnerSelected($event)"></app-file-upload>
-<app-slot-machine *ngIf="winnerData" [winnerData]="winnerData"></app-slot-machine>
+<div>
+  <h1>Upload CSV and Get Winner</h1>
+  <input type="file" (change)="onFileChange($event)" />
+  <button (click)="uploadFile()">Upload</button>
+  <button (click)="getWinner()">Get Winner</button>
+
+  <div *ngIf="winner">
+    <h2>Winner</h2>
+    <p>Name: {{ winner.name }}</p>
+    <p>Email: {{ winner.email }}</p>
+  </div>
+</div>
